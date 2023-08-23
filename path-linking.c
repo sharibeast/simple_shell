@@ -121,7 +121,7 @@ char *_custom_which(char *filename, path_list *head)
 	while (temporary_var)
 	{
 
-		string = concat_all(temporary_var->dir, "/", filename);
+		string = concatenate(temporary_var->dir, "/", filename);
 		if (stat(string, &strr) == 0)
 		{
 			return (string);
