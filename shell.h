@@ -59,6 +59,6 @@ void free_array_ptr(char **arv);
 void empty_list_memory(path_list *head);
 char *_get_global_env_value(const char *name);
 char *_custom_which(char *filename, path_list *head);
-void run(char **arg)
+void run(char **arg);
 
 #endif
