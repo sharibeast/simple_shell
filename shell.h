@@ -20,6 +20,21 @@ typedef struct custom_build
 	void (*f)(char **);
 } custom_build;
 
+
+/**
+ * struct path_list - Linked list with paths dir
+ * @dir: directory
+ * @p: pointer to  node
+ */
+typedef struct path_list
+{
+	char *dir;
+	struct path_list *p;
+} path_list;
+
+path_list *append_node(path_list **head, char *str);
+path_list *linkpath(char *path);
+
 int _putchar(char c);
 void _puts(char *str);
 int _strlen(char *s);
@@ -27,6 +42,7 @@ char *_strdup(char *str);
 char *concatenate(char *nm, char *sp, char *val);
 int _atoi(char *p);
 void print_env(char **arv __attribute__ ((unused)));
+
 char *concatenate_all(char *nm, char *sp, char *val);
 int _strlen(char *s);
 int _putchar(char c);
