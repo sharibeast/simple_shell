@@ -14,7 +14,7 @@ void custom_exit(char **params)
 		p = _atoi(params[1]);
 		if (p <= -1)
 			p = 2;
-		freearv(params);
+		free_array_ptr(params);
 		exit(p);
 	}
 	for (i = 0; params[i]; i++)
