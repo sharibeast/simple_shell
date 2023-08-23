@@ -68,7 +68,7 @@ int main(void)
 			val = _get_global_env_value("PATH");
 			lead_var = linkpath(val);
 			pathName = _custom_which(arg[0], lead_var);
-			f = checkbuild(arg);
+			f = verify_build(arg);
 			if (f)
 			{
 				free(buffer_var);
