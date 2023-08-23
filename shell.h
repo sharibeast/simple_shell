@@ -49,7 +49,10 @@ int _strlen(char *s);
 char *_strptr(char *string);
 char *concat(char *first, char *second, char *third);
 int _atoi(char *p);
-void print_env(char **arv __attribute__ ((unused)));
+void print_env(char **arv);
+void _environmentSeting(char **arg);
+void _environmentUnsetting(char **arg);
+void(*verify_build(char **arv))(char **arv);
 
 int _strlen(char *s);
 int _putchar(char c);
