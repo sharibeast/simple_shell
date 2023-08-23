@@ -57,11 +57,13 @@ char *_get_global_env_value(const char *name)
 	char *value;
 
 	if (!name)
+	{
 		return (NULL);
+	}
 	for (n = 0; envronm[n]; n++)
 	{
 		m = 0;
-		if (envronm[n][m] == name[m])
+		if (name[m] == envronm[n][m])
 		{
 			while (name[m])
 			{
