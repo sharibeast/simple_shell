@@ -1,5 +1,55 @@
 #include "shell.h"
 
+
+/**
+ * _reallocate - Reallocation of memory block
+ * @pointer: Old pointer
+ * @prev_size: previous pointer's size
+ * @latest_size: Latest pointer's size
+ * Return: New Pointer
+ */
+
+void *_reallocate(void *pointer, unsigned int prev_size, unsigned int latest_size)
+{
+	char *nw;
+	char *old;
+
+	unsigned int i;
+
+	if (pointer == NULL)
+		return (malloc(latest_size));
+
+	if (latest_size == prev_size)
+		return (pointer);
+
+	if (latest_size == 0 && pointer != NULL)
+	{
+		free(pointer);
+		return (NULL);
+	}
+
+	nw = malloc(latest_size);
+	old = pointer;
+	if (nw == NULL)
+		return (NULL);
+
+	if (latest_size > prev_size)
+	{
+		for (i = 0; i < prev_size; i++)
+			nw[i] = old[i];
+		free(pointer);
+		for (i = prev_size; i < latest_size; i++)
+			nw[i] = '\0';
+	}
+	if (latest_size < prev_size)
+	{
+		for (i = 0; i < latest_size; i++)
+			nw[i] = old[i];
+		free(pointer);
+	}
+	return (nw);
+}
+
 /**
  * string_spliting - A function to split string
  * @line: the sentence
@@ -69,53 +119,4 @@ void run(char **arg)
 		exit(EXIT_FAILURE);
 	}
 	wait(&st);
-}
-
-/**
- * _reallocate - Reallocation of memory block
- * @pointer: Old pointer
- * @prev_size: previous pointer's size
- * @latest_size: Latest pointer's size
- * Return: New Pointer
- */
-
-void *_reallocate(void *pointer, unsigned int prev_size, unsigned int latest_size)
-{
-	char *nw;
-	char *old;
-
-	unsigned int i;
-
-	if (pointer == NULL)
-		return (malloc(latest_size));
-
-	if (latest_size == prev_size)
-		return (pointer);
-
-	if (latest_size == 0 && pointer != NULL)
-	{
-		free(pointer);
-		return (NULL);
-	}
-
-	nw = malloc(latest_size);
-	old = pointer;
-	if (nw == NULL)
-		return (NULL);
-
-	if (latest_size > prev_size)
-	{
-		for (i = 0; i < prev_size; i++)
-			nw[i] = old[i];
-		free(pointer);
-		for (i = prev_size; i < latest_size; i++)
-			nw[i] = '\0';
-	}
-	if (latest_size < prev_size)
-	{
-		for (i = 0; i < latest_size; i++)
-			nw[i] = old[i];
-		free(pointer);
-	}
-	return (nw);
 }
