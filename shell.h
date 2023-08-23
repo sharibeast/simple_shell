@@ -14,7 +14,6 @@
 #include <sys/wait.h>
 #include <sys/stat.h>
 
-extern char **envronm;
 
 /**
  * struct custom_build - ptr fn with command building
@@ -65,5 +64,6 @@ char *_custom_which(char *filename, path_list *head);
 void run(char **arg);
 void(*verify_build(char **arv))(char **arv);
 char **string_spliting(char *line, const char *dlm);
+extern char **envronm;
 
 #endif
