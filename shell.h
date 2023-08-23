@@ -55,4 +55,6 @@ int _strlen(char *s);
 int _putchar(char c);
 void _puts(char *str);
 void custom_exit(char **params);
+void free_array_ptr(char **arv);
+
 #endif
