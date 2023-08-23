@@ -13,5 +13,7 @@ int _putchar(char c);
 void _puts(char *str);
 int _strlen(char *s);
 char *_strdup(char *str);
+char *concatenate_all(char *nm, char *sp, char *val);
+
 
 #endif
