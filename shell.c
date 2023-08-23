@@ -14,13 +14,13 @@ void key_handler(int num)
 
 /**
 * _endOfFile - HandleFileEnds
-* @length: return val of getline function
+* @length_var: return val of getline function
 * @bf: Temporary Variable
  */
-void _endOfFile(int length, char *bf)
+void _endOfFile(int length_var, char *bf)
 {
 	(void)bf;
-	if (length == -1)
+	if (length_var == -1)
 	{
 		if (isatty(STDIN_FILENO))
 		{
@@ -48,44 +48,44 @@ void _isTerminal(void)
 
 int main(void)
 {
-	ssize_t length = 0;
-	char *buffer = NULL, *val, *pathName, **arg;
-	size_t size = 0;
-	path_list *lead = '\0';
+	size_t size_var = 0;
 	void (*f)(char **);
+	path_list *lead_var = '\0';
+	ssize_t length_var = 0;
+	char *buffer_var = NULL, *val, *pathName, **arg;
 
 	signal(SIGINT, key_handler);
-	while (length != EOF)
+	while (length_var != EOF)
 	{
-		_isatty();
-		length = getline(&buffer, &size, stdin);
-		_EOF(length, buffer);
-		arg = splitstring(buffer, " \n");
+		_isTerminal();
+		length_var = getline(&buffer_var, &size_var, stdin);
+		_endOfFile(length_var, buffer_var);
+		arg = splitstring(buffer_var, " \n");
 		if (!arg[0] || !arg)
-			execute(arg);
+			run(arg);
 		else
 		{
 			val = _getenv("PATH");
-			lead = linkpath(val);
-			pathName = _which(arg[0], lead);
+			lead_var = linkpath(val);
+			pathName = _which(arg[0], lead_var);
 			f = checkbuild(arg);
 			if (f)
 			{
-				free(buffer);
+				free(buffer_var);
 				f(arg);
 			}
 			else if (!pathName)
-				execute(arg);
+				run(arg);
 			else if (pathName)
 			{
 				free(arg[0]);
 				arg[0] = pathName;
-				execute(arg);
+				run(arg);
 			}
 		}
 	}
-	empty_list_memory(lead);
+	empty_list_memory(lead_var);
 	free_array_ptr(arg);
-	free(buffer);
+	free(buffer_var);
 	return (0);
 }

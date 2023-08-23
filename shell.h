@@ -56,6 +56,6 @@ int _putchar(char c);
 void _puts(char *str);
 void custom_exit(char **params);
 void free_array_ptr(char **arv);
-void empty_list_memory(path_list *head);
+void empty_lfree_listist_memory(path_list *head);
 
 #endif
