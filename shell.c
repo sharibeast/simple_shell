@@ -60,7 +60,7 @@ int main(void)
 		_isTerminal();
 		length_var = getline(&buffer_var, &size_var, stdin);
 		_endOfFile(length_var, buffer_var);
-		arg = splitstring(buffer_var, " \n");
+		arg = string_spliting(buffer_var, " \n");
 		if (!arg[0] || !arg)
 			run(arg);
 		else
