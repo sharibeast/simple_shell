@@ -1,4 +1,4 @@
-
+#include "shell.h"
 /**
  * free_array_ptr - frees the array of pointers arv
  *@arv:  pointer arrays
