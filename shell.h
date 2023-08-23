@@ -40,7 +40,8 @@ typedef struct path_list
 } path_list;
 
 path_list *append_node(path_list **head, char *str);
-path_list *linkpath(char *path);
+
+path_list *path_link(char *path);
 
 int _putchar(char c);
 void _puts(char *str);
