@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "shell.h"
 /**
  * _puts - prints string
  * @string: pointer to the string

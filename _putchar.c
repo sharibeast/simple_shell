@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "shell.h"
 
 /**
  * _putchar - Prints Character
