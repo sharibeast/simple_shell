@@ -1,4 +1,4 @@
-#include "shell.h";
+#include "shell.h"
 
 /**
  * key_handler - checks if Ctrl C is pressed
