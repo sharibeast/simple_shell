@@ -84,7 +84,7 @@ int main(void)
 			}
 		}
 	}
-	free_list(lead);
+	empty_list_memory(lead);
 	free_array_ptr(arg);
 	free(buffer);
 	return (0);
