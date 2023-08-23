@@ -132,3 +132,23 @@ char *_which(char *filename, path_list *head)
 
 	return (NULL);
 }
+
+
+/**
+ * empty_list_memory - frees a list_t
+ *@head: pointer to our linked list
+ */
+void empty_list_memory(path_list *head)
+{
+	path_list *size;
+
+	while (head)
+	{
+		size = head->p;
+		free(head->dir);
+		free(head);
+		head = size;
+	}
+
+}
+

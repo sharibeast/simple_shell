@@ -85,7 +85,7 @@ int main(void)
 		}
 	}
 	free_list(lead);
-	freearv(arg);
+	free_array_ptr(arg);
 	free(buffer);
 	return (0);
 }
