@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * exitt - function to exist shell
+ * custom_exit - function to exist shell
  * @params: array of words
  */
 void custom_exit(char **params)

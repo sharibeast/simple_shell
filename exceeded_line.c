@@ -9,7 +9,8 @@
  * Return: New Pointer
  */
 
-void *_reallocate(void *pointer, unsigned int prev_size, unsigned int latest_size)
+void *_reallocate(void *pointer, unsigned int prev_size,
+unsigned int latest_size)
 {
 	char *nw;
 	char *old;

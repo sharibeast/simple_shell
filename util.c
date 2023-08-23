@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * env - prints  environment in system
+ * print_env - prints  environment in system
  * @arv: arguments
  */
 void print_env(char **arv __attribute__ ((unused)))
