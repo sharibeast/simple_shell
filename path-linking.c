@@ -105,3 +105,30 @@ path_list *path_link(char *path)
 }
 
 
+/**
+ * _which - look for filename pathname
+ * @filename: command
+ * @head: head
+ * Return:  filename pathname
+ */
+char *_which(char *filename, path_list *head)
+{
+	struct stat strr;
+	char *string;
+
+	path_list *temporary_var = head;
+
+	while (temporary_var)
+	{
+
+		string = concat_all(temporary_var->dir, "/", filename);
+		if (stat(string, &strr) == 0)
+		{
+			return (string);
+		}
+		free(string);
+		temporary_var = temporary_var->p;
+	}
+
+	return (NULL);
+}
