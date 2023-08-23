@@ -26,7 +26,7 @@ void _environmentSeting(char **arg)
 
 	if (!arg[1] || !arg[2])
 	{
-		perror(_getenv("_"));
+		perror(_get_global_env_value("_"));
 		return;
 	}
 
@@ -75,7 +75,7 @@ void _environmentUnsetting(char **arg)
 
 	if (!arg[1])
 	{
-		perror(_getenv("_"));
+		perror(_get_global_env_value("_"));
 		return;
 	}
 	for (i = 0; envronm[i]; i++)

@@ -57,5 +57,7 @@ void _puts(char *str);
 void custom_exit(char **params);
 void free_array_ptr(char **arv);
 void empty_lfree_listist_memory(path_list *head);
+char *_get_global_env_value(const char *name);
+char *_custom_which(char *filename, path_list *head);
 
 #endif

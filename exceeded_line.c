@@ -16,7 +16,7 @@ char **string_spliting(char *line, const char *dlm)
 	cpy = malloc(_strlen(line) + 1);
 	if (cpy == NULL)
 	{
-		perror(_getenv("_"));
+		perror(_get_global_env_value("_"));
 		return (NULL);
 	}
 	i = 0;
@@ -60,7 +60,7 @@ void run(char **arg)
 	i = fork();
 	if (i == -1)
 	{
-		perror(_getenv("_"));
+		perror(_get_global_env_value("_"));
 	}
 	if (i == 0)
 	{

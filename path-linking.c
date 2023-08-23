@@ -111,7 +111,7 @@ path_list *path_link(char *path)
  * @head: head
  * Return:  filename pathname
  */
-char *_which(char *filename, path_list *head)
+char *_custom_which(char *filename, path_list *head)
 {
 	struct stat strr;
 	char *string;
