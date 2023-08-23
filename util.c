@@ -104,3 +104,43 @@ void _environmentUnsetting(char **arg)
 		}
 	}
 }
+
+
+
+
+/**
+* verify_build - verify command building
+* @arv: arguments
+* Return: ptr fn
+*/
+void(*verify_build(char **arv))(char **arv)
+{
+	int i, j;
+	custom_build T[] = {
+		{"exit", custom_exit},
+		{"env", print_env},
+		{"setenv", _environmentSeting},
+		{"unsetenv", _environmentUnsetting},
+		{NULL, NULL}
+	};
+
+	for (i = 0; T[i].n; i++)
+	{
+		j = 0;
+		if (T[i].n[j] == arv[0][j])
+		{
+			for (j = 0; arv[0][j]; j++)
+			{
+				if (T[i].n[j] != arv[0][j])
+				{
+					break;
+				}
+			}
+			if (!arv[0][j])
+			{
+				return (T[i].f);
+			}
+		}
+	}
+	return (0);
+}
