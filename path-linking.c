@@ -90,7 +90,7 @@ char *_get_global_env_value(const char *name)
  */
 path_list *path_link(char *path)
 {
-	char *cpath = _strdup(path);
+	char *cpath = _strptr(path);
 	path_list *head = '\0';
 	char *tkn;
 
@@ -121,7 +121,7 @@ char *_custom_which(char *filename, path_list *head)
 	while (temporary_var)
 	{
 
-		string = concatenate(temporary_var->dir, "/", filename);
+		string = concat(temporary_var->dir, "/", filename);
 		if (stat(string, &strr) == 0)
 		{
 			return (string);

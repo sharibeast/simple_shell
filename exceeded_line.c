@@ -79,7 +79,7 @@ char **string_spliting(char *line, const char *dlm)
 
 	assurer = strtok(cpy, dlm);
 	arr = malloc((sizeof(char *) * 2));
-	arr[0] = _strdup(assurer);
+	arr[0] = _strptr(assurer);
 
 	i = 1;
 	j = 3;
@@ -87,7 +87,7 @@ char **string_spliting(char *line, const char *dlm)
 	{
 		assurer = strtok(NULL, dlm);
 		arr = _reallocate(arr, (sizeof(char *) * (j - 1)), (sizeof(char *) * j));
-		arr[i] = _strdup(assurer);
+		arr[i] = _strptr(assurer);
 		i++;
 		j++;
 	}

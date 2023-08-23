@@ -45,8 +45,8 @@ path_list *linkpath(char *path);
 int _putchar(char c);
 void _puts(char *str);
 int _strlen(char *s);
-char *_strdup(char *str);
-char *concatenate(char *nm, char *sp, char *val);
+char *_strptr(char *string);
+char *concat(char *first, char *second, char *third);
 int _atoi(char *p);
 void print_env(char **arv __attribute__ ((unused)));
 

@@ -58,7 +58,7 @@ void _environmentSeting(char **arg)
 	if (!envronm[i])
 	{
 
-		envronm[i] = concatenate(arg[1], "=", arg[2]);
+		envronm[i] = concat(arg[1], "=", arg[2]);
 		envronm[i + 1] = '\0';
 
 	}

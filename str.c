@@ -7,8 +7,8 @@
  */
 char *_strptr(char *string)
 {
-	int i, length;
 	char *newVar;
+	int i, length;
 
 	if (!string)
 	{
