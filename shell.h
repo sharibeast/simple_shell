@@ -81,5 +81,7 @@ char *_which(char *name, list_path *lead);
 int _putchar(char c);
 char *_strdup(char *str);
 void freeList_fn(list_path *lead);
+void _EOF(int len, char *buff);
+void _isatty(void);
 
 #endif

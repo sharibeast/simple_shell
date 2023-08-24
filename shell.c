@@ -12,33 +12,8 @@ void sig_handler(int sig_num)
 	}
 }
 
-/**
-* _EOF - handles the End of File
-* @len: return value of getline function
-* @buff: buffer
- */
-void _EOF(int len, char *buff)
-{
-	(void)buff;
-	if (len == -1)
-	{
-		if (isatty(STDIN_FILENO))
-		{
-			_puts("\n");
-			free(buff);
-		}
-		exit(0);
-	}
-}
-/**
-  * _isatty - verif if terminal
-  */
 
-void _isatty(void)
-{
-	if (isatty(STDIN_FILENO))
-		_puts("#cisfun$ ");
-}
+
 /**
  * main - Shell
  * Return: 0 on success
