@@ -41,11 +41,7 @@ char *_which(char *filename, list_path *head);
  * @name: buildin command
  * @func: execute the buildin command
  */
-typedef struct mybuild
-{
-	char *name;
-	void (*func)(char **);
-} mybuild;
+
 
 void(*checkbuild(char **arv))(char **arv);
 void terminate(char **argument);
@@ -64,7 +60,11 @@ int _strlen(char *s);
 
 
 
-
+typedef struct custom_build
+{
+	char *n;
+	void (*f)(char **);
+} custom_build;
 void terminate(char **argument);
 int _atoi(char *pointer);
 void environment_fn(char **arguments __attribute__ ((unused)));
