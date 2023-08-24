@@ -83,7 +83,7 @@ char *_strdup(char *str);
 void freeList_fn(list_path *lead);
 void _EOF(int len, char *buff);
 void _isatty(void);
-void sig_handler(int sig_num)
+void controlCheck(int num);
 
 
 #endif

@@ -17,7 +17,7 @@ int main(void)
 	list_path *head = '\0';
 	void (*f)(char **);
 
-	signal(SIGINT, sig_handler);
+	signal(SIGINT, controlCheck);
 	while (len != EOF)
 	{
 		_isatty();
