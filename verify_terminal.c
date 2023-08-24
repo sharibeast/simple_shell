@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
-  * _isatty - verif if terminal
+  * _custom_isatty - verif  terminal
   */
 
 void _custom_isatty(void)

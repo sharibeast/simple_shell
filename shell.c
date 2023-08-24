@@ -14,7 +14,7 @@ int main(void)
 	size_t sz_var = 0;
 	list_path *var_head = '\0';
 	ssize_t var_len = 0;
-	char *val, *path_name, **arv_var , *buff_var = NULL;
+	char *val, *path_name, **arv_var, *buff_var = NULL;
 	void (*f)(char **);
 
 	signal(SIGINT, controlCheck);
