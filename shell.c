@@ -82,7 +82,7 @@ int main(void)
 			}
 		}
 	}
-	free_list(head);
+	freeList_fn(head);
 	freearray_fn(arv);
 	free(buff);
 	return (0);

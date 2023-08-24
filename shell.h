@@ -53,7 +53,7 @@ void setEnvironment_fn(char **arv);
 void _unsetenv(char **arv);
 
 void freearv(char **arv);
-void free_list(list_path *head);
+void freeList_fn(list_path *head);
 int _strlen(char *s);
 
 
@@ -80,6 +80,6 @@ list_path *pathDirectory(char *actualPath);
 char *_which(char *name, list_path *lead);
 int _putchar(char c);
 char *_strdup(char *str);
-
+void freeList_fn(list_path *lead);
 
 #endif
