@@ -8,9 +8,9 @@
  */
 int _atoi(char *pointer)
 {
-        int signal = 1;
+	int signal = 1;
 	int i;
-        int number;
+	int number;
 
 	i = 0;
 	number = 0;
