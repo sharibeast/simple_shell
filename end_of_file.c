@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
-* _EOF - handles the End of File
+* end_of_file - handles the End of File
 * @len: return value of getline function
 * @buff: buffer
  */

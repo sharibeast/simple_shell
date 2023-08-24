@@ -3,7 +3,7 @@
 
 /**
  * controlCheck - checks if Ctrl C is pressed
- * @sig_num: number
+ * @num: number
  */
 void controlCheck(int num)
 {
