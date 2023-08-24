@@ -12,10 +12,7 @@
 #include <sys/stat.h>
 #include <signal.h>
 
-int _putchar(char c);
 
-
-char *_strdup(char *str);
 
 
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
@@ -81,6 +78,8 @@ void _puts(char *str);
 char *concatenate_all(char *name, char *sep, char *value);
 list_path *pathDirectory(char *actualPath);
 char *_which(char *name, list_path *lead);
+int _putchar(char c);
+char *_strdup(char *str);
 
 
 #endif
