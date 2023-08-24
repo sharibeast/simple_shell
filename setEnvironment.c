@@ -7,7 +7,8 @@
  */
 void setEnvironment_fn(char **argument)
 {
-	int b, a,c;
+	int b, a, c;
+
 	if (!argument[1] || !argument[2])
 	{
 		perror(fetchEnvironment("_"));
