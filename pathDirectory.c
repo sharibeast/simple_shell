@@ -8,16 +8,16 @@
  */
 list_path *pathDirectory(char *actualPath)
 {
-        char *tk;
-        list_path *lead = '\0';
-        char *path = _strdup(actualPath);
+	char *tk;
+	list_path *lead = '\0';
+	char *path = _strdup(actualPath);
 
-        tk = strtok(path, ":");
-        while (tk)
-        {
-                lead = nodeEnd(&lead, tk);
-                tk = strtok(NULL, ":");
-        }
+	tk = strtok(path, ":");
+	while (tk)
+	{
+		lead = nodeEnd(&lead, tk);
+		tk = strtok(NULL, ":");
+	}
 
-        return (lead);
+	return (lead);
 }
