@@ -13,10 +13,10 @@
 #include <signal.h>
 
 int _putchar(char c);
-void _puts(char *str);
-int _strlen(char *s);
+
+
 char *_strdup(char *str);
-char *concat_all(char *name, char *sep, char *value);
+
 
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 char **devideString_fn(char *string, const char *dl);
@@ -57,6 +57,7 @@ void _unsetenv(char **arv);
 
 void freearv(char **arv);
 void free_list(list_path *head);
+int _strlen(char *s);
 
 
 
@@ -76,9 +77,10 @@ void run(char **arguments);
 void freearray_fn(char **arp);
 char *fetchEnvironment(const char *title);
 list_path *nodeEnd(list_path **lead, char *string);
+void _puts(char *str);
+char *concatenate_all(char *name, char *sep, char *value);
 list_path *pathDirectory(char *actualPath);
 char *_which(char *name, list_path *lead);
-
 
 
 #endif

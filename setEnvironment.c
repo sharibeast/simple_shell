@@ -45,7 +45,7 @@ void setEnvironment_fn(char **argument)
         if (!environ[a])
         {
 
-                environ[a] = concat_all(argument[1], "=", argument[2]);
+                environ[a] = concatenate_all(argument[1], "=", argument[2]);
                 environ[a + 1] = '\0';
         }
 }

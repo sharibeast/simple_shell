@@ -17,7 +17,7 @@ char *_which(char *name, list_path *lead)
 	while (tmp)
 	{
 
-		str = concat_all(tmp->dir, "/", name);
+		str = concatenate_all(tmp->dir, "/", name);
 		if (stat(str, &statt) == 0)
 		{
 			return (str);
