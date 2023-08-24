@@ -3,8 +3,8 @@
 
 
 /**
- * terminate - Terminates Shell
- * @arv: array of words of the entered line
+ * terminate - Terminates  the Shell
+ * @argument: words array
  */
 void terminate(char **argument)
 {
