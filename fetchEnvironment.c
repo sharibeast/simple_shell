@@ -8,30 +8,30 @@
  */
 char *fetchEnvironment(const char *title)
 {
-        char *k;
-        int a;
-        int b;
+	char *k;
+	int a;
+	int b;
 
-        if (!title)
-                return (NULL);
-        for (a = 0; environ[a]; a++)
-        {
-                b = 0;
-                if (title[b] == environ[a][b])
-                {
-                        while (title[b])
-                        {
-                                if (title[b] != environ[a][b])
-                                        break;
+	if (!title)
+		return (NULL);
+	for (a = 0; environ[a]; a++)
+	{
+		b = 0;
+		if (title[b] == environ[a][b])
+		{
+			while (title[b])
+			{
+				if (title[b] != environ[a][b])
+					break;
 
-                                b++;
-                        }
-                        if (title[b] == '\0')
-                        {
-                                k = (environ[a] + b + 1);
-                                return (k);
-                        }
-                }
-        }
-        return (0);
+				b++;
+			}
+			if (title[b] == '\0')
+			{
+				k = (environ[a] + b + 1);
+				return (k);
+			}
+		}
+	}
+	return (0);
 }
