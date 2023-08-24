@@ -10,7 +10,7 @@ void run(char **arguments)
 {
 
 	int a;
-        int check;
+	int check;
 
 	if (!arguments || !arguments[0])
 		return;
@@ -22,7 +22,7 @@ void run(char **arguments)
 	if (a == 0)
 	{
 		execve(arguments[0], arguments, environ);
-			perror(arguments[0]);
+		perror(arguments[0]);
 		exit(EXIT_FAILURE);
 	}
 	wait(&check);
