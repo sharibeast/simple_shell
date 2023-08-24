@@ -11,7 +11,7 @@
 char **devideString_fn(char *string, const char *dl)
 {
 	char **theArray;
-        int numberOfWords;
+	int numberOfWords;
 	char *cp;
 	int i;
 	char *tk;
@@ -39,7 +39,8 @@ char **devideString_fn(char *string, const char *dl)
 	while (tk)
 	{
 		tk = strtok(NULL, dl);
-		theArray = _realloc(theArray, (sizeof(char *) * (numberOfWords - 1)), (sizeof(char *) * numberOfWords));
+		theArray = _realloc(theArray, (sizeof(char *) * (numberOfWords - 1)),
+		(sizeof(char *) * numberOfWords));
 		theArray[i] = _strdup(tk);
 		i++;
 		numberOfWords++;

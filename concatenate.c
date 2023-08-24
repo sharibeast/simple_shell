@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * concatinate_all - concatinate strings
+ * concatenate_all - concatinate strings
  * @name: 1st string
  * @sep: string 2nd
  * @value: string 3rd
