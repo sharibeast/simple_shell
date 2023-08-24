@@ -37,8 +37,6 @@ typedef struct list_path
 } list_path;
 
 
-list_path *add_node_end(list_path **head, char *str);
-list_path *linkpath(char *path);
 char *_which(char *filename, list_path *head);
 
 /**
@@ -78,6 +76,9 @@ void run(char **arguments);
 void freearray_fn(char **arp);
 char *fetchEnvironment(const char *title);
 list_path *nodeEnd(list_path **lead, char *string);
+list_path *pathDirectory(char *actualPath);
+char *_which(char *name, list_path *lead);
+
 
 
 #endif

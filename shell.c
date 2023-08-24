@@ -64,7 +64,7 @@ int main(void)
 		else
 		{
 			value = fetchEnvironment("PATH");
-			head = linkpath(value);
+			head = pathDirectory(value);
 			pathname = _which(arv[0], head);
 			f = verifyBuild_fn(arv);
 			if (f)
