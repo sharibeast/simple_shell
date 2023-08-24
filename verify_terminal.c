@@ -4,7 +4,7 @@
   * _isatty - verif if terminal
   */
 
-void _isatty(void)
+void _custom_isatty(void)
 {
 	if (isatty(STDIN_FILENO))
 		_puts("#cisfun$ ");

@@ -11,44 +11,44 @@
 
 int main(void)
 {
-	ssize_t len = 0;
-	char *buff = NULL, *value, *pathname, **arv;
-	size_t size = 0;
-	list_path *head = '\0';
+	size_t sz_var = 0;
+	list_path *var_head = '\0';
+	ssize_t var_len = 0;
+	char *val, *path_name, **arv_var , *buff_var = NULL;
 	void (*f)(char **);
 
 	signal(SIGINT, controlCheck);
-	while (len != EOF)
+	while (var_len != EOF)
 	{
-		_isatty();
-		len = getline(&buff, &size, stdin);
-		_EOF(len, buff);
-		arv = devideString_fn(buff, " \n");
-		if (!arv || !arv[0])
-			run(arv);
+		_custom_isatty();
+		var_len = getline(&buff_var, &sz_var, stdin);
+		end_of_file(var_len, buff_var);
+		arv_var = devideString_fn(buff_var, " \n");
+		if (!arv_var || !arv_var[0])
+			run(arv_var);
 		else
 		{
-			value = fetchEnvironment("PATH");
-			head = pathDirectory(value);
-			pathname = _which(arv[0], head);
-			f = verifyBuild_fn(arv);
+			val = fetchEnvironment("PATH");
+			var_head = pathDirectory(val);
+			path_name = _which(arv_var[0], var_head);
+			f = verifyBuild_fn(arv_var);
 			if (f)
 			{
-				free(buff);
-				f(arv);
+				free(buff_var);
+				f(arv_var);
 			}
-			else if (!pathname)
-				run(arv);
-			else if (pathname)
+			else if (!path_name)
+				run(arv_var);
+			else if (path_name)
 			{
-				free(arv[0]);
-				arv[0] = pathname;
-				run(arv);
+				free(arv_var[0]);
+				arv_var[0] = path_name;
+				run(arv_var);
 			}
 		}
 	}
-	freeList_fn(head);
-	freearray_fn(arv);
-	free(buff);
+	freeList_fn(var_head);
+	freearray_fn(arv_var);
+	free(buff_var);
 	return (0);
 }

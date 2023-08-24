@@ -81,8 +81,8 @@ char *_which(char *name, list_path *lead);
 int _putchar(char c);
 char *_strdup(char *str);
 void freeList_fn(list_path *lead);
-void _EOF(int len, char *buff);
-void _isatty(void);
+void end_of_file(int len, char *buff);
+void _custom_isatty(void);
 void controlCheck(int num);
 
 
