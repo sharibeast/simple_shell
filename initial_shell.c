@@ -9,12 +9,11 @@ void prompt_handler(void)
 {
 	if (isatty(STDIN_FILENO))
 	{
-		const char *prompt = "alx_shell[$] ";
+		const char *prompt = "#cisfun$ ";
 
-		write(STDOUT_FILENO, prompt, 13);
+		write(STDOUT_FILENO, prompt, 10);
 	}
 }
-
 
 /**
  * handle_signal - A signal handler function to handle cancel signal.
@@ -49,7 +48,6 @@ void handle_exit(char **input_command)
 	free_memory(input_command);
 	exit(status);
 }
-
 
 /**
  * handle_eof - A handle_eof function that chaecks if buffer is EOF or not
