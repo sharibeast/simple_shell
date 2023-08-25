@@ -22,7 +22,6 @@ void handle_exit(char **input_command);
 
 /*### functions to child process Creation ###*/
 void execute_child(char **command, char *shell_name, char **envp, int loops);
-int dir_changes(const char *dir);
 
 
 /*### functions to execute command ###*/
@@ -53,6 +52,7 @@ char *_strcat(char *dest, char *src);
 int compare_strings_function(char *firstString, char *secondString);
 void child_execution(char **cmd, char *name, char **envp, int loops);
 void free_memory_and_exit_fn(char **cmd);
+int directory_changes_fn(const char *dir);
 void free_memory_fn(char **cmd);
 
 int length_of_string_function(char *givenString);

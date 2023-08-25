@@ -36,7 +36,7 @@ int main(int argc, char **argv, char **envp)
 			if (compare_strings_function(command[0], "exit") != 0)
 				handle_exit(command);
 			else if (compare_strings_function(command[0], "cd") != 0)
-				dir_changes(command[1]);
+				directory_changes_fn(command[1]);
 			else
 				child_execution(command, argv[0], envp, loops);
 		}
