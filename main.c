@@ -1,8 +1,6 @@
 #include "shell.h"
-
 /**
  * main - Launches the shell
- *
  * @nofArg: Number of Arguments
  * @inputArg: Input Arguments
  * @argVar: Environment Variables
@@ -11,10 +9,8 @@
 int main(int nofArg, char **inputArg, char **argVar)
 {
 	char *temporary = NULL, **cmd = NULL;
-
 	size_t bfSz = 0;
 	ssize_t checked = 0;
-
 	int tries = 0;
 	(void)nofArg;
 
@@ -26,13 +22,9 @@ int main(int nofArg, char **inputArg, char **argVar)
 		checked = getline(&temporary, &bfSz, stdin);
 
 		if (checked == EOF)
-		{
 			handle_end_of_file(temporary);
-		}
 		else if (*temporary == '\n')
-		{
 			free(temporary);
-		}
 		else
 		{
 			temporary[length_of_string_function(temporary) - 1] = '\0';
@@ -48,7 +40,6 @@ int main(int nofArg, char **inputArg, char **argVar)
 		fflush(stdin);
 		temporary = NULL, bfSz = 0;
 	}
-
 	if (checked == -1)
 	{
 		return (EXIT_FAILURE);
