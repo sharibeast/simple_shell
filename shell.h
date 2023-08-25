@@ -50,7 +50,7 @@ void free_memory_fn(char **cmd);
 int length_of_string_function(char *givenString);
 char *copy_string_function(char *destination, char *source);
 char *concatenate_string_function(char *destination, char *source);
-int string_to_integer_function(char *string)
+int string_to_integer_function(char *string);
 
 
 #endif /*### _SHELL_H_ ###*/
