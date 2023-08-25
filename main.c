@@ -10,10 +10,11 @@
  */
 int main(int nofArg, char **inputArg, char **argVar)
 {
-	char *temporary = NULL;
-	char **cmd = NULL;
+	char *temporary = NULL, **cmd = NULL;
+
 	size_t bfSz = 0;
 	ssize_t checked = 0;
+
 	int tries = 0;
 	(void)nofArg;
 
@@ -47,7 +48,10 @@ int main(int nofArg, char **inputArg, char **argVar)
 		fflush(stdin);
 		temporary = NULL, bfSz = 0;
 	}
+
 	if (checked == -1)
+	{
 		return (EXIT_FAILURE);
+	}
 	return (EXIT_SUCCESS);
 }
