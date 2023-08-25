@@ -24,10 +24,6 @@ void exit_handler(char **input_command);
 void execute_child(char **command, char *shell_name, char **envp, int loops);
 
 
-/*### functions to execute command ###*/
-char **_dirsPATH(char **env);
-void command_error(char *name, int loops, char **command);
-
 
 /*### functions to tokenize input ###*/
 char **custom_tokenizer(char *buffer, const char *delim);
@@ -55,6 +51,8 @@ void signal_handle(int signal);
 void exit_handler(char **cmd);
 void handle_end_of_file(char *buf);
 void show_environment(char **environment);
+char **directory_path_function(char **environment);
+void error_handler(char *name, int cycleCounts, char **com);
 
 
 #endif /*### _SHELL_H_ ###*/

@@ -30,7 +30,7 @@ void run(char **runCommand, char *name, char **envir, int cycles)
         }
         else
         {
-                road = _dirsPATH(envir);
+                road = directory_path_function(envir);
                 while (road[i])
                 {
                         path = concatenate_string_function(road[i], runCommand[0]);
@@ -46,7 +46,7 @@ void run(char **runCommand, char *name, char **envir, int cycles)
                                 return;
                         }
                 }
-                command_error(name, cycles, runCommand);
+                error_handler(name, cycles, runCommand);
                 free_memory_fn(road);
         }
 }
