@@ -16,7 +16,7 @@ char **tokenize(char *buffer, const char *delim)
 	if (buffer == NULL)
 		return (NULL);
 
-	buffer_size = _strlen(buffer);
+	buffer_size = length_of_string_function(buffer);
 	commands = malloc((buffer_size + 1) * sizeof(char *));
 	if (commands == NULL)
 	{
@@ -29,14 +29,14 @@ char **tokenize(char *buffer, const char *delim)
 	token = strtok(buffer, delim);
 	while (token != NULL)
 	{
-		commands[num] = malloc(_strlen(token) + 1);
+		commands[num] = malloc(length_of_string_function(token) + 1);
 		if (commands[num] == NULL)
 		{
 			perror("Unable to allocate buffer");
 			free_memory_fn(commands);
 			return (NULL);
 		}
-		_strcpy(commands[num], token);
+		copy_string_function(commands[num], token);
 		token = strtok(NULL, delim);
 		num++;
 	}

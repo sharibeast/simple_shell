@@ -1,41 +1,6 @@
 #include "shell.h"
 
 /**
- * _strlen - A function that finds the length of the string
- *
- * @str: The input string
- * Return: The length of the string
- */
-unsigned int _strlen(char *str)
-{
-	unsigned int length = 0;
-
-	while (str[length])
-		length++;
-
-	return (length);
-}
-
-
-/**
- * _strcpy - This function copies a string to another string.
- *
- * @dest: The pointer to the copy pointer string
- * @src: The pointer to the string to copy
- * Return: A pointer to copied string
- */
-char *_strcpy(char *dest, char *src)
-{
-	char *mix = dest;
-
-	while (*src)
-		*dest++ = *src++;
-	*dest = '\0';
-	return (mix);
-}
-
-
-/**
  * _strcat - This function concatenates two strings.
  *
  * @dest: The output string

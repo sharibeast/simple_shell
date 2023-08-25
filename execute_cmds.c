@@ -61,7 +61,7 @@ void print_env(char **env)
 
 	while (env[num])
 	{
-		length = _strlen(env[num]);
+		length = length_of_string_function(env[num]);
 		write(STDOUT_FILENO, env[num], length);
 		write(STDOUT_FILENO, "\n", 1);
 		num++;
@@ -110,10 +110,10 @@ void command_error(char *shell_name, int loops, char **command)
 	char result;
 
 	result = loops + '0';
-	write(STDOUT_FILENO, shell_name, _strlen(shell_name));
+	write(STDOUT_FILENO, shell_name, length_of_string_function(shell_name));
 	write(STDOUT_FILENO, ": ", 2);
 	write(STDOUT_FILENO, &result, 1);
 	write(STDOUT_FILENO, ": ", 2);
-	write(STDOUT_FILENO, command[0], _strlen(command[0]));
+	write(STDOUT_FILENO, command[0], length_of_string_function(command[0]));
 	write(STDOUT_FILENO, ": not found\n", 12);
 }

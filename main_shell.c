@@ -30,7 +30,7 @@ int main(int argc, char **argv, char **envp)
 			free(buffer);
 		else
 		{
-			buffer[_strlen(buffer) - 1] = '\0';
+			buffer[length_of_string_function(buffer) - 1] = '\0';
 			command = tokenize(buffer, " \0");
 			free(buffer);
 			if (compare_strings_function(command[0], "exit") != 0)

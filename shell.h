@@ -42,8 +42,6 @@ void free_memory(char **command);
 
 /*### Auxiliary functions ###*/
 int compare_strings_function(char *str1, char *str2);
-unsigned int _strlen(char *str);
-char *_strcpy(char *dest, char *src);
 int _strint(char *s);
 char *_strcat(char *dest, char *src);
 
@@ -53,9 +51,14 @@ char *_strcat(char *dest, char *src);
 
 /*### Almas & Sharif*/
 int compare_strings_function(char *firstString, char *secondString);
+<<<<<<< HEAD
 void child_execution(char **cmd, char *name, char **envp, int loops);
 void free_memory_and_exit_fn(char **cmd);
 void free_memory_fn(char **cmd);
 
+=======
+int length_of_string_function(char *givenString);
+char *copy_string_function(char *destination, char *source);
+>>>>>>> 618a2a1 (aux)
 
 #endif /*### _SHELL_H_ ###*/
