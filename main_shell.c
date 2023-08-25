@@ -38,7 +38,7 @@ int main(int argc, char **argv, char **envp)
 			else if (compare_strings_function(command[0], "cd") != 0)
 				dir_changes(command[1]);
 			else
-				execute_child(command, argv[0], envp, loops);
+				child_execution(command, argv[0], envp, loops);
 		}
 		fflush(stdin);
 		buffer = NULL, buffer_size = 0;

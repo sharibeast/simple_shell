@@ -51,7 +51,11 @@ char *_strcat(char *dest, char *src);
 
 
 
+
 /*### Almas & Sharif*/
 int compare_strings_function(char *firstString, char *secondString);
+void child_execution(char **cmd, char *name, char **envp, int loops);
+
+
 
 #endif /*### _SHELL_H_ ###*/
