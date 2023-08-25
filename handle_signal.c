@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * handle_signal - A signal handler function to handle cancel signal.
+ * signal_handle - A signal handler function to handle cancel signal.
  *
  * @param_signal: handled signal
  * Return: void.

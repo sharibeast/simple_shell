@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * handle_eof - A handle_eof function that chaecks if buffer is EOF or not
+ * handle_end_of_file - function that checks if buffer is end_of_fil
  *
  * @buf: ptr input string
  * Return: void
