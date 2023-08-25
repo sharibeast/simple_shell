@@ -1,43 +1,20 @@
-#ifndef _SHELL_H_
-#define _SHELL_H_
+#ifndef _SIMPLE_SHELL_H_
+#define _SIMPLE_SHELL_H_
 
-#include <sys/types.h>
 #include <sys/stat.h>
+#include <string.h>
 #include <sys/wait.h>
+#include <sys/types.h>
+#include <stdio.h>
 #include <signal.h>
 #include <stdlib.h>
-#include <stdio.h>
 #include <unistd.h>
-#include <string.h>
 
-/*### Main program Shell file ###*/
-int main(int argc, char **argv, char **envp);
-
-/*### functions to Initialize shell ###*/
-
-
-void handle_eof(char *buffer);
-void exit_handler(char **input_command);
-
-
-/*### functions to child process Creation ###*/
-void execute_child(char **command, char *shell_name, char **envp, int loops);
-
-
-
-/*### functions to tokenize input ###*/
-char **custom_tokenizer(char *buffer, const char *delim);
-
-
-/*### functions to free memory ###*/
-void free_memory(char **command);
-
-
-
-/*### Almas & Sharif*/
 int compare_strings_function(char *firstString, char *secondString);
 void child_execution(char **cmd, char *name, char **envp, int loops);
+int main(int argc, char **argv, char **envp);
 void free_memory_and_exit_fn(char **cmd);
+char **custom_tokenizer(char *buffer, const char *delim);
 int directory_changes_fn(const char *dir);
 void free_memory_fn(char **cmd);
 
@@ -54,5 +31,4 @@ void show_environment(char **environment);
 char **directory_path_function(char **environment);
 void error_handler(char *name, int cycleCounts, char **com);
 
-
-#endif /*### _SHELL_H_ ###*/
+#endif
