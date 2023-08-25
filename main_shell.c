@@ -1,53 +1,53 @@
 #include "shell.h"
 
 /**
- * main - This is the main function that runs our shell.
+ * main - Launches the shell
  *
- * @argc: The number of input arguments.
- * @argv: The array of input arguments.
- * @envp: The array of environmental variables.
- * Return: Always 0 (success).
+ * @nofArg: Number of Arguments
+ * @inputArg: Input Arguments
+ * @argVar: Environment Variables
+ * Return: Always Integer.
  */
-int main(int argc, char **argv, char **envp)
+int main(int nofArg, char **inputArg, char **argVar)
 {
-	char *buffer = NULL;
-	char **command = NULL;
-	size_t buffer_size = 0;
-	ssize_t checked_chars = 0;
-	int loops = 0;
-	(void)argc;
+	char *temporary = NULL;
+	char **cmd = NULL;
+	size_t bfSz = 0;
+	ssize_t checked = 0;
+	int tries = 0;
+	(void)nofArg;
 
 	while (1)
 	{
-		loops++;
+		tries++;
 		handle_prompt();
 		signal(SIGINT, signal_handle);
-		checked_chars = getline(&buffer, &buffer_size, stdin);
+		checked = getline(&temporary, &bfSz, stdin);
 
-		if (checked_chars == EOF)
+		if (checked == EOF)
 		{
-			handle_end_of_file(buffer);
+			handle_end_of_file(temporary);
 		}
-		else if (*buffer == '\n')
+		else if (*temporary == '\n')
 		{
-			free(buffer);
+			free(temporary);
 		}
 		else
 		{
-			buffer[length_of_string_function(buffer) - 1] = '\0';
-			command = custom_tokenizer(buffer, " \0");
-			free(buffer);
-			if (compare_strings_function(command[0], "exit") != 0)
-				exit_handler(command);
-			else if (compare_strings_function(command[0], "cd") != 0)
-				directory_changes_fn(command[1]);
+			temporary[length_of_string_function(temporary) - 1] = '\0';
+			cmd = custom_tokenizer(temporary, " \0");
+			free(temporary);
+			if (compare_strings_function(cmd[0], "exit") != 0)
+				exit_handler(cmd);
+			else if (compare_strings_function(cmd[0], "cd") != 0)
+				directory_changes_fn(cmd[1]);
 			else
-				child_execution(command, argv[0], envp, loops);
+				child_execution(cmd, inputArg[0], argVar, tries);
 		}
 		fflush(stdin);
-		buffer = NULL, buffer_size = 0;
+		temporary = NULL, bfSz = 0;
 	}
-	if (checked_chars == -1)
+	if (checked == -1)
 		return (EXIT_FAILURE);
 	return (EXIT_SUCCESS);
 }
