@@ -20,21 +20,25 @@ int main(int argc, char **argv, char **envp)
 	while (1)
 	{
 		loops++;
-		prompt_handler();
-		signal(SIGINT, handle_signal);
+		handle_prompt();
+		signal(SIGINT, signal_handle);
 		checked_chars = getline(&buffer, &buffer_size, stdin);
 
 		if (checked_chars == EOF)
-			handle_eof(buffer);
+		{
+			handle_end_of_file(buffer);
+		}
 		else if (*buffer == '\n')
+		{
 			free(buffer);
+		}
 		else
 		{
 			buffer[length_of_string_function(buffer) - 1] = '\0';
 			command = tokenize(buffer, " \0");
 			free(buffer);
 			if (compare_strings_function(command[0], "exit") != 0)
-				handle_exit(command);
+				exit_handler(command);
 			else if (compare_strings_function(command[0], "cd") != 0)
 				directory_changes_fn(command[1]);
 			else

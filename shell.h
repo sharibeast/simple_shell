@@ -14,10 +14,10 @@
 int main(int argc, char **argv, char **envp);
 
 /*### functions to Initialize shell ###*/
-void prompt_handler(void);
-void handle_signal(int signals);
+
+
 void handle_eof(char *buffer);
-void handle_exit(char **input_command);
+void exit_handler(char **input_command);
 
 
 /*### functions to child process Creation ###*/
@@ -50,8 +50,11 @@ int length_of_string_function(char *givenString);
 char *copy_string_function(char *destination, char *source);
 char *concatenate_string_function(char *destination, char *source);
 int string_to_integer_function(char *string);
-
 void run(char **runCommand, char *name, char **envir, int cycles);
+void handle_prompt(void);
+void signal_handle(int signal);
+void exit_handler(char **cmd);
+void handle_end_of_file(char *buf);
 
 
 #endif /*### _SHELL_H_ ###*/
