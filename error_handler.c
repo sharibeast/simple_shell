@@ -1,6 +1,5 @@
 #include "shell.h"
 
-
 /**
  * error_handler - Handles Errors
  *
@@ -14,7 +13,7 @@ void error_handler(char *name, int cycleCounts, char **com)
 	char res;
 
 	res = cycleCounts + '0';
-	
+
 	write(STDOUT_FILENO, name, length_of_string_function(name));
 	write(STDOUT_FILENO, ": ", 2);
 	write(STDOUT_FILENO, &res, 1);

@@ -9,12 +9,12 @@
  */
 char *copy_string_function(char *destination, char *source)
 {
-        char *dest = destination;
+	char *dest = destination;
 
-        while (*source)
-        {
-                *destination++ = *source++;
-        }
-        *destination = '\0';
-        return (dest);
+	while (*source)
+	{
+		*destination++ = *source++;
+	}
+	*destination = '\0';
+	return (dest);
 }

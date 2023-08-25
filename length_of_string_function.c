@@ -8,12 +8,12 @@
  */
 int length_of_string_function(char *givenString)
 {
-        int i = 0;
+	int i = 0;
 
-        while (givenString[i])
-        {
-                i++;
-        }
+	while (givenString[i])
+	{
+		i++;
+	}
 
-        return (i);
+	return (i);
 }

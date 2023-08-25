@@ -6,7 +6,6 @@
  * Return: void.
  */
 
-
 void free_memory_and_exit_fn(char **cmd)
 {
 	size_t num = 0;

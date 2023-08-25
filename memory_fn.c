@@ -25,5 +25,3 @@ void free_memory_fn(char **cmd)
 		free(cmd[num]);
 	free(cmd);
 }
-
-

@@ -1,12 +1,11 @@
 #include "shell.h"
 
 /**
-  * directory_changes_fn - function to change current working directory in shell
-  *
-  * @dir: curr working dir (new)
-  * Return: 0 when success, -1 if failed.
-  */
-
+ * directory_changes_fn - function to change current working directory in shell
+ *
+ * @dir: curr working dir (new)
+ * Return: 0 when success, -1 if failed.
+ */
 
 int directory_changes_fn(const char *dir)
 {

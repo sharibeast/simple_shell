@@ -9,16 +9,16 @@
  */
 int compare_strings_function(char *firstString, char *secondString)
 {
-        unsigned int i = 0;
+	unsigned int i = 0;
 
-        while (firstString[i])
-        {
-                if (firstString[i] != secondString[i])
-                {
-                        return (0);
-                }
-                i++;
-        }
+	while (firstString[i])
+	{
+		if (firstString[i] != secondString[i])
+		{
+			return (0);
+		}
+		i++;
+	}
 
-        return (1);
+	return (1);
 }

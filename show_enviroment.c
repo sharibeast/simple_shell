@@ -9,8 +9,8 @@
 void show_environment(char **environment)
 {
 	size_t count = 0;
-        
-        size_t len = 0;
+
+	size_t len = 0;
 
 	while (environment[count])
 	{

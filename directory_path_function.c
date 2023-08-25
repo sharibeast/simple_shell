@@ -11,8 +11,8 @@ char **directory_path_function(char **environment)
 	char *path = NULL;
 
 	int i = 0;
-        
-        char **road = NULL;
+
+	char **road = NULL;
 
 	path = strtok(environment[i], "=");
 	while (environment[i])
@@ -21,7 +21,7 @@ char **directory_path_function(char **environment)
 		{
 			path = strtok(NULL, "\n");
 			road = custom_tokenizer(path, ":");
-                        
+
 			return (road);
 		}
 		i++;

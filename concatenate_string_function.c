@@ -8,17 +8,17 @@
  */
 char *concatenate_string_function(char *destination, char *source)
 {
-        char *dest = destination;
+	char *dest = destination;
 
-        while (*destination)
-        {
-                destination++;
-        }
+	while (*destination)
+	{
+		destination++;
+	}
 
-        *destination++ = '/';
-        while (*source)
-        {
-                *destination++ = *source++;
-        }
-        return (dest);
+	*destination++ = '/';
+	while (*source)
+	{
+		*destination++ = *source++;
+	}
+	return (dest);
 }

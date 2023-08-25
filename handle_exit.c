@@ -6,7 +6,6 @@
  * Return: Nothing.
  */
 
-
 void exit_handler(char **cmd)
 {
 	int status = 0;
@@ -17,4 +16,3 @@ void exit_handler(char **cmd)
 	free_memory_fn(cmd);
 	exit(status);
 }
-
