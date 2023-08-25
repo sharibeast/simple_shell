@@ -1,55 +1,6 @@
 #include "shell.h"
 
 /**
- * execute_command - This function executes a command.
- *
- * @command: Tokenized command.
- * @shell_name: The name of the shell.
- * @env: Environmental variables.
- * @loops: Number of executed cycles.
- * Return: Nothing
- */
-void execute_command(char **command, char *shell_name, char **env, int loops)
-{
-	char **pathways = NULL, *full_path = NULL;
-	struct stat st;
-	unsigned int i = 0;
-
-	if (compare_strings_function(command[0], "env") != 0)
-		print_env(env);
-	if (stat(command[0], &st) == 0)
-	{
-		if (execve(command[0], command, env) < 0)
-		{
-			perror(shell_name);
-			free_memory_and_exit_fn(command);
-		}
-	}
-	else
-	{
-		pathways = _dirsPATH(env);
-		while (pathways[i])
-		{
-			full_path = concatenate_string_function(pathways[i], command[0]);
-			i++;
-			if (stat(full_path, &st) == 0)
-			{
-				if (execve(full_path, command, env) < 0)
-				{
-					perror(shell_name);
-					free_memory_fn(pathways);
-					free_memory_and_exit_fn(command);
-				}
-				return;
-			}
-		}
-		command_error(shell_name, loops, command);
-		free_memory_fn(pathways);
-	}
-}
-
-
-/**
  * print_env - Prints all environmental variables.
  *
  * @env: The environmental variables.

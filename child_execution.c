@@ -22,7 +22,7 @@ void child_execution(char **cmd, char *n, char **environment, int l)
 	}
 	else if (process_id == 0)
 	{
-		execute_command(cmd, n, environment, l);
+		run(cmd, n, environment, l);
 		free_memory_fn(cmd);
 	}
 	else

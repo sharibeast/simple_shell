@@ -25,7 +25,6 @@ void execute_child(char **command, char *shell_name, char **envp, int loops);
 
 
 /*### functions to execute command ###*/
-void execute_command(char **command, char *name, char **env, int cicles);
 void print_env(char **env);
 char **_dirsPATH(char **env);
 void command_error(char *name, int loops, char **command);
@@ -51,6 +50,8 @@ int length_of_string_function(char *givenString);
 char *copy_string_function(char *destination, char *source);
 char *concatenate_string_function(char *destination, char *source);
 int string_to_integer_function(char *string);
+
+void run(char **runCommand, char *name, char **envir, int cycles);
 
 
 #endif /*### _SHELL_H_ ###*/
