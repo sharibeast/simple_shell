@@ -15,7 +15,7 @@ void execute_command(char **command, char *shell_name, char **env, int loops)
 	struct stat st;
 	unsigned int i = 0;
 
-	if (_strcmp(command[0], "env") != 0)
+	if (compare_strings_function(command[0], "env") != 0)
 		print_env(env);
 	if (stat(command[0], &st) == 0)
 	{
@@ -84,7 +84,7 @@ char **_dirsPATH(char **env)
 	pathvalue = strtok(env[num], "=");
 	while (env[num])
 	{
-		if (_strcmp(pathvalue, "PATH"))
+		if (compare_strings_function(pathvalue, "PATH"))
 		{
 			pathvalue = strtok(NULL, "\n");
 			pathways = tokenize(pathvalue, ":");

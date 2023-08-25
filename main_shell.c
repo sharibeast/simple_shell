@@ -33,9 +33,9 @@ int main(int argc, char **argv, char **envp)
 			buffer[_strlen(buffer) - 1] = '\0';
 			command = tokenize(buffer, " \0");
 			free(buffer);
-			if (_strcmp(command[0], "exit") != 0)
+			if (compare_strings_function(command[0], "exit") != 0)
 				handle_exit(command);
-			else if (_strcmp(command[0], "cd") != 0)
+			else if (compare_strings_function(command[0], "cd") != 0)
 				dir_changes(command[1]);
 			else
 				execute_child(command, argv[0], envp, loops);

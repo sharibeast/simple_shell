@@ -42,10 +42,16 @@ void freeMem_and_exit(char **command);
 
 
 /*### Auxiliary functions ###*/
-int _strcmp(char *str1, char *str2);
+int compare_strings_function(char *str1, char *str2);
 unsigned int _strlen(char *str);
 char *_strcpy(char *dest, char *src);
 int _strint(char *s);
 char *_strcat(char *dest, char *src);
+
+
+
+
+/*### Almas & Sharif*/
+int compare_strings_function(char *firstString, char *secondString);
 
 #endif /*### _SHELL_H_ ###*/
