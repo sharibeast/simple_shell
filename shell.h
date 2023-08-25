@@ -40,9 +40,7 @@ void free_memory(char **command);
 
 
 /*### Auxiliary functions ###*/
-int compare_strings_function(char *str1, char *str2);
 int _strint(char *s);
-char *_strcat(char *dest, char *src);
 
 
 
@@ -57,5 +55,7 @@ void free_memory_fn(char **cmd);
 
 int length_of_string_function(char *givenString);
 char *copy_string_function(char *destination, char *source);
+char *concatenate_string_function(char *destination, char *source);
+
 
 #endif /*### _SHELL_H_ ###*/

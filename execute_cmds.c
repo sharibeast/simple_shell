@@ -30,7 +30,7 @@ void execute_command(char **command, char *shell_name, char **env, int loops)
 		pathways = _dirsPATH(env);
 		while (pathways[i])
 		{
-			full_path = _strcat(pathways[i], command[0]);
+			full_path = concatenate_string_function(pathways[i], command[0]);
 			i++;
 			if (stat(full_path, &st) == 0)
 			{
