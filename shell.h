@@ -39,12 +39,6 @@ char **tokenize(char *buffer, const char *delim);
 void free_memory(char **command);
 
 
-/*### Auxiliary functions ###*/
-int _strint(char *s);
-
-
-
-
 
 /*### Almas & Sharif*/
 int compare_strings_function(char *firstString, char *secondString);
@@ -56,6 +50,7 @@ void free_memory_fn(char **cmd);
 int length_of_string_function(char *givenString);
 char *copy_string_function(char *destination, char *source);
 char *concatenate_string_function(char *destination, char *source);
+int string_to_integer_function(char *string)
 
 
 #endif /*### _SHELL_H_ ###*/

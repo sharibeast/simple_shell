@@ -43,7 +43,7 @@ void handle_exit(char **input_command)
 	int status = 0;
 
 	if (input_command[1] != NULL)
-		status = _strint(input_command[1]);
+		status = string_to_integer_function(input_command[1]);
 
 	free_memory_fn(input_command);
 	exit(status);
