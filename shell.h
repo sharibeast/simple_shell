@@ -51,14 +51,11 @@ char *_strcat(char *dest, char *src);
 
 /*### Almas & Sharif*/
 int compare_strings_function(char *firstString, char *secondString);
-<<<<<<< HEAD
 void child_execution(char **cmd, char *name, char **envp, int loops);
 void free_memory_and_exit_fn(char **cmd);
 void free_memory_fn(char **cmd);
 
-=======
 int length_of_string_function(char *givenString);
 char *copy_string_function(char *destination, char *source);
->>>>>>> 618a2a1 (aux)
 
 #endif /*### _SHELL_H_ ###*/
