@@ -22,7 +22,7 @@ void execute_command(char **command, char *shell_name, char **env, int loops)
 		if (execve(command[0], command, env) < 0)
 		{
 			perror(shell_name);
-			freeMem_and_exit(command);
+			free_memory_and_exit_fn(command);
 		}
 	}
 	else
@@ -37,14 +37,14 @@ void execute_command(char **command, char *shell_name, char **env, int loops)
 				if (execve(full_path, command, env) < 0)
 				{
 					perror(shell_name);
-					free_memory(pathways);
-					freeMem_and_exit(command);
+					free_memory_fn(pathways);
+					free_memory_and_exit_fn(command);
 				}
 				return;
 			}
 		}
 		command_error(shell_name, loops, command);
-		free_memory(pathways);
+		free_memory_fn(pathways);
 	}
 }
 

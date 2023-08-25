@@ -9,7 +9,7 @@
  * @l: how many times loop executed
  * Return: Void.
  */
-void child_execution(char **cmd, char *name, char **envp, int loops)
+void child_execution(char **cmd, char *n, char **environment, int l)
 {
 	int process_id, stats;
 
@@ -17,21 +17,21 @@ void child_execution(char **cmd, char *name, char **envp, int loops)
 	if (process_id < 0)
 	{
 		perror("error message: Error fork");
-		freeMem_and_exit(cmd);
+		free_memory_and_exit_fn(cmd);
 	}
 	else if (process_id == 0)
 	{
-		execute_command(cmd, name, envp, loops);
-		free_memory(cmd);
+		execute_command(cmd, n, environment, l);
+		free_memory_fn(cmd);
 	}
 	else
 	{
 		if (waitpid(process_id, &stats, 0) < 0)
 		{
 			perror("error message: process id wait failed");
-			freeMem_and_exit(cmd);
+			free_memory_and_exit_fn(cmd);
 		}
 	}
 
-	free_memory(cmd);
+	free_memory_fn(cmd);
 }

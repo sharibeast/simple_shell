@@ -38,7 +38,6 @@ char **tokenize(char *buffer, const char *delim);
 
 /*### functions to free memory ###*/
 void free_memory(char **command);
-void freeMem_and_exit(char **command);
 
 
 /*### Auxiliary functions ###*/
@@ -55,7 +54,8 @@ char *_strcat(char *dest, char *src);
 /*### Almas & Sharif*/
 int compare_strings_function(char *firstString, char *secondString);
 void child_execution(char **cmd, char *name, char **envp, int loops);
-
+void free_memory_and_exit_fn(char **cmd);
+void free_memory_fn(char **cmd);
 
 
 #endif /*### _SHELL_H_ ###*/

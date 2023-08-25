@@ -45,7 +45,7 @@ void handle_exit(char **input_command)
 	if (input_command[1] != NULL)
 		status = _strint(input_command[1]);
 
-	free_memory(input_command);
+	free_memory_fn(input_command);
 	exit(status);
 }
 
