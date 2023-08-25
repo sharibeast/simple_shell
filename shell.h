@@ -25,7 +25,6 @@ void execute_child(char **command, char *shell_name, char **envp, int loops);
 
 
 /*### functions to execute command ###*/
-void print_env(char **env);
 char **_dirsPATH(char **env);
 void command_error(char *name, int loops, char **command);
 
@@ -55,6 +54,7 @@ void handle_prompt(void);
 void signal_handle(int signal);
 void exit_handler(char **cmd);
 void handle_end_of_file(char *buf);
+void show_environment(char **environment);
 
 
 #endif /*### _SHELL_H_ ###*/

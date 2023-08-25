@@ -18,7 +18,7 @@ void run(char **runCommand, char *name, char **envir, int cycles)
 
         if (compare_strings_function(runCommand[0], "envir") != 0)
         {
-                print_env(envir);
+                show_environment(envir);
         }
         if (stat(runCommand[0], &a) == 0)
         {
