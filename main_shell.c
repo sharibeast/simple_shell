@@ -35,7 +35,7 @@ int main(int argc, char **argv, char **envp)
 		else
 		{
 			buffer[length_of_string_function(buffer) - 1] = '\0';
-			command = tokenize(buffer, " \0");
+			command = custom_tokenizer(buffer, " \0");
 			free(buffer);
 			if (compare_strings_function(command[0], "exit") != 0)
 				exit_handler(command);

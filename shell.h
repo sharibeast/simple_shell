@@ -31,7 +31,7 @@ void command_error(char *name, int loops, char **command);
 
 
 /*### functions to tokenize input ###*/
-char **tokenize(char *buffer, const char *delim);
+char **custom_tokenizer(char *buffer, const char *delim);
 
 
 /*### functions to free memory ###*/

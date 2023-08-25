@@ -38,7 +38,7 @@ char **_dirsPATH(char **env)
 		if (compare_strings_function(pathvalue, "PATH"))
 		{
 			pathvalue = strtok(NULL, "\n");
-			pathways = tokenize(pathvalue, ":");
+			pathways = custom_tokenizer(pathvalue, ":");
 			return (pathways);
 		}
 		num++;
